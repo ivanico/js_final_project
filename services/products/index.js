@@ -25,9 +25,9 @@ api.put('/product/:id', products.update);
 
 
 
-api.listen(conf.get('service_ports').auth, err => {
+api.listen(conf.get('service_ports').product, err => {
     if (err) {
         return console.error(err);
     }
-    console.log(`App started on port ${conf.get('service_ports').auth}`);
+    console.log(`App started on port ${conf.get('service_ports').product}`);
 });
