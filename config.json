@@ -7,10 +7,8 @@
         "password": ""
     },
     "service_ports": {
-        "proxy": 8080,
         "auth": 8081,
-        "files": 8082,
-        "notes": 8083
+        "products": 8082
     },
     "server": {
         "key": "tajna",
