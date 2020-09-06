@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('express-jwt');
 const db = require('../../pkg/db');
-const conf = require('../../pkg/config');
+const config = require('../../pkg/config');
 const products = require('./handlers/products');
 
 db.init();
@@ -25,9 +25,9 @@ api.put('/product/:id', products.update);
 
 
 
-api.listen(conf.get('service_ports').product, err => {
+api.listen(config.get('service_ports').product, err => {
     if (err) {
         return console.error(err);
     }
-    console.log(`App started on port ${conf.get('service_ports').product}`);
+    console.log(`App started on port ${config.get('service_ports').products}`);
 });

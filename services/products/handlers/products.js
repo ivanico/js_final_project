@@ -1,5 +1,5 @@
-const product = require('../pkg/products');
-const productValidator = require('../pkg/products/validation')
+const product = require('../../../pkg/products');
+const productValidator = require('../../../pkg/products/validation')
 
 const getAll = (req, res) => {
     product.getAll()

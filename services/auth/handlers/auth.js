@@ -2,7 +2,6 @@ const validate = require('../../../pkg/user/validation');
 const user = require('../../../pkg/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt-nodejs');
-const mailer = require('../../../pkg/mailer');
 const config = require('../../../pkg/config');
 
 const register = (req, res) => {
