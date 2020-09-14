@@ -2,12 +2,12 @@
     "db": {
         "host": "cluster0-j520k.mongodb.net",
         "port": 27017,
-        "dbname": "",
+        "dbname": "final_project",
         "username": "ico",
         "password": "ico"
     },
     "service_ports": {
-        "proxy": 8083,
+        "proxy": 8080,
         "auth": 8081,
         "products": 8082
     },
