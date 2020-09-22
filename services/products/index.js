@@ -17,11 +17,11 @@ api.use(
     })
 );
 
-api.get('/product', products.getAll);
-api.get('/product/:id', products.getSingle);
-api.post('/product', products.create);
-api.delete('/product/:id', products.remove);
-api.put('/product/:id', products.update);
+api.get('/', products.getAll);
+api.get('/:id', products.getSingle);
+api.post('/', products.create);
+api.delete('/:id', products.remove);
+api.put('/:id', products.update);
 
 
 
