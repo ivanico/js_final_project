@@ -5,7 +5,7 @@ var proxy = require('express-http-proxy');
 const api = express();
 
 api.use('/api/v1/auth', proxy(`localhost:${conf.get('service_ports').auth}/api/v1/auth`));
-api.use('/api/v1/prducts', proxy(`localhost:${conf.get('service_ports').prducts}/api/v1/prducts`));
+api.use('/api/v1/products', proxy(`localhost:${conf.get('service_ports').products}/api/v1/products`));
 
 api.listen(process.env.PORT || conf.get('service_ports').proxy, err => {
     if (err) {
