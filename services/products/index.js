@@ -25,7 +25,7 @@ api.put('/:id', products.update);
 
 
 
-api.listen(config.get('service_ports').product, err => {
+api.listen(config.get('service_ports').products, err => {
     if (err) {
         return console.error(err);
     }
