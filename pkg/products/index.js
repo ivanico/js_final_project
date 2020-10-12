@@ -24,9 +24,9 @@ const create = (data) => {
     });
 };
 
-const getAll= () => {
+const getAll= (uid) => {
     return new Promise((success, fail) =>{
-        Product.find({}, (err, data) =>{
+        Product.find({owner_id: uid}, (err, data) =>{
             if(err) {
                 return fail(err);
             }
@@ -46,9 +46,9 @@ const getOne = () => {
     });
 };
 
-const remove = () => {
+const remove = (id, uid) => {
     return new Promise((success, fail) =>{
-        Product.deleteOne({_id: id}, err => {
+        Product.deleteOne({_id: id, owner_id: uid}, err => {
             if(err) {
                 return fail (err);
             }
@@ -57,9 +57,9 @@ const remove = () => {
     });
 };
 
-const update = () => {
+const update = (data, id, uid) => {
     return new Promise((success, fail) =>{
-        Product.updateOne({_id: id}, data, err => {
+        Product.updateOne({_id: id, owner_id: uid}, data, err => {
             if(err) {
                 return fail (err);
             }
