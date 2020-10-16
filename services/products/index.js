@@ -4,12 +4,14 @@ const jwt = require('express-jwt');
 const db = require('../../pkg/db');
 const config = require('../../pkg/config');
 const products = require('./handlers/products');
+const cors = require('cors');
 
 db.init();
 
 const api = express();
 
 api.use(bodyParser.json());
+api.use(cors());
 api.use(
     jwt({
         secret: config.get('server').key,

@@ -7,7 +7,8 @@ const Product = mongoose.model(
         description: String,
         type: String,
         purchase_date: Date,
-        price:Number
+        price:Number,
+        owner_id:String
     },
     'products'
 )
@@ -26,7 +27,8 @@ const create = (data) => {
 
 const getAll= (uid) => {
     return new Promise((success, fail) =>{
-        Product.find({owner_id: uid}, (err, data) =>{
+        let query = {owner_id: uid};
+        Product.find(query, (err, data) =>{
             if(err) {
                 return fail(err);
             }
@@ -35,7 +37,7 @@ const getAll= (uid) => {
     });    
 };
 
-const getOne = () => {
+const getOne = (id) => {
     return new Promise((success, fail) =>{
         Product.findOne({_id: id}, (err,data) => {
             if(err) {
@@ -48,7 +50,7 @@ const getOne = () => {
 
 const remove = (id, uid) => {
     return new Promise((success, fail) =>{
-        Product.deleteOne({_id: id, owner_id: uid}, err => {
+        Product.deleteOne({_id: id, ownerw_id: uid}, err => {
             if(err) {
                 return fail (err);
             }
