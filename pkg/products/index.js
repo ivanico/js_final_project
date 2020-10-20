@@ -50,7 +50,7 @@ const getOne = (id) => {
 
 const remove = (id, uid) => {
     return new Promise((success, fail) =>{
-        Product.deleteOne({_id: id, ownerw_id: uid}, err => {
+        Product.deleteOne({_id: id, owner_id: uid}, err => {
             if(err) {
                 return fail (err);
             }

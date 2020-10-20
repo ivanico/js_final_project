@@ -59,7 +59,8 @@ const update = (req, res) => {
         if(!matches){
             throw 'Bad request';
         }
-        return product.update(req.params.id, req.body, req.user.uid)
+        let data = {...req.body, owner_id: req.user.uid, _id: req.params.id};
+        return product.update(data, req.params.id, req.user.uid);
     })    
     .then(() => {
         res.status(200).send('no content');
