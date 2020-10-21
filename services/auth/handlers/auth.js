@@ -50,7 +50,7 @@ const login = (req, res) => {
                 exp: parseInt((new Date().getTime() + (24 * 60 * 60 * 1000)) / 1000),
             };
             let token = jwt.sign(payload, config.get('server').key);
-            res.status(200).send({ token: token });
+            res.status(200).send({ token: token, u });
         })
         .catch(err => {
             res.status(err.code).send(err.message);
